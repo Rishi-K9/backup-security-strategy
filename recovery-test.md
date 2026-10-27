@@ -1,30 +1,44 @@
 # Backup Recovery and Rollback Test Report
 # Objective
 
-To document the backup recovery and rollback process for a small organisation.
+To demonstrate file recovery and rollback using GitHub version history.
 
 # Test Environment
 Project: Backup Security Strategy
-Test Type: Backup Recovery and Rollback
-Environment: Isolated Test Folder
-Backup Method: 3-2-1 Backup Rule
-# Recovery Procedure
-Identify: Identify the affected files or data.
-Select: Choose a clean, known-good backup.
-Restore: Restore the backup to a separate test location.
-Verify: Check file integrity and accessibility.
-Document: Record the actual test results.
-# Rollback Procedure
-Stop Changes: Prevent further changes to affected data.
-Select Backup: Identify the last known-good backup.
-Restore Data: Recover the previous version.
-Verify Recovery: Confirm that the restored files work correctly.
-Record Results: Document the outcome and any issues.
-# Test Results
-Test Status: Pending execution
-Restoration Status: Not yet verified
-Rollback Status: Not performed
-Evidence: To be added after actual testing
-# Conclusion
+Platform: GitHub
+Test File: rollback-demo.txt
+Test Type: File-Version Rollback
+# Test Procedure
+Create Original File: Created rollback-demo.txt containing Version 1.
+Simulate Data Change: Modified the file to contain Version 2.
+Review Version History: Used GitHub to access the previous version.
+Restore Original Content: Replaced Version 2 with the original Version 1 content.
+Commit Restoration: Saved the restored file in a new GitHub commit.
+# Rollback Evidence
+Original Version: Version 1 — original test data.
+Modified Version: Version 2 — simulated data change.
+Rollback Method: GitHub version history and manual restoration.
+Expected Final Content:
 
-This procedure provides a structured approach to backup recovery and rollback. Actual testing is required to confirm successful restoration and recovery.
+BACKUP VERSION 1
+
+This is the original test data.
+
+Verification: Check the current rollback-demo.txt file to confirm the original content has been restored.
+# Test Result
+
+Status: Rollback procedure performed.
+
+The original file content was restored through a new GitHub commit. Final verification should be confirmed by checking the current file.
+
+# Security Considerations
+Maintain separate backups of important organisational data.
+Restrict access to backup files and repositories.
+Test restoration procedures regularly.
+Keep backup copies protected from unauthorised changes.
+
+# Limitations
+This test demonstrates GitHub file-version rollback only. It does not demonstrate restoration from a separate backup medium or recovery of an entire system.
+
+# Conclusion
+The test demonstrates how version history can help recover an earlier file version after an accidental or unwanted change. A complete organisational backup strategy should also include independent backups and regular restoration tests.
